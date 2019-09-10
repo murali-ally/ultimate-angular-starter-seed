@@ -38,9 +38,10 @@
           <p ng-dblclick="oldTodo = eachTodo.title; editMode = true;" ng-hide="editMode">{{ eachTodo.title }}</p>
           <div ng-show="editMode">
             <input type="text" ng-model="eachTodo.title"
-              ng-blur="todo.update(eachTodo, $index, oldTodo); editMode = false;" placeholder="Add New Todo" />
+              ng-blur="todo.update(eachTodo, $index, oldTodo); editMode = false;" placeholder="Add New Todo"
+              todo-autofocus="editMode" />
           </div>
-          <div ng-click="todo.remove(eachTodo, $index);">X</div>
+          <a href="" ng-click="todo.remove(eachTodo, $index);">X</a>
         </li>
       </ul>
     </div>
@@ -50,6 +51,7 @@
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/todo.controller.js"></script>
   <script type="text/javascript" src="js/todo.service.js"></script>
+  <script type="text/javascript" src="js/todoAutofocus.directive.js"></script>
 </body>
 
 </html>
